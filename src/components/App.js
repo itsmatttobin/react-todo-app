@@ -9,6 +9,7 @@ class App extends Component {
     this.addItemToList = this.addItemToList.bind(this);
     this.deleteItemFromList = this.deleteItemFromList.bind(this);
     this.updateItemInList = this.updateItemInList.bind(this);
+    this.deleteAllFromList = this.deleteAllFromList.bind(this);
 
     this.state = {
       items: {}
@@ -48,6 +49,12 @@ class App extends Component {
     this.setState({ items });
   }
 
+  deleteAllFromList() {
+    this.setState({
+      items: {}
+    });
+  }
+
   render() {
     const numItems = Object.keys(this.state.items).length;
     return (
@@ -63,18 +70,20 @@ class App extends Component {
             <AddItemForm addItemToList={this.addItemToList} />
           </section>
 
-          <section className="list-items">
-            {numItems > 0 &&
-              <h2>Items...</h2>
-            }
-            <ul className="item-list">
-              {
-                Object
-                  .keys(this.state.items)
-                  .map(key => <Item key={key} index={key} allItems={this.state.items} details={this.state.items[key]} deleteItemFromList={this.deleteItemFromList} updateItemInList={this.updateItemInList} />)
-              }
-            </ul>
-          </section>
+          {numItems > 0 &&
+            <section className="list-items">              
+              <ul className="item-list">
+                {
+                  Object
+                    .keys(this.state.items)
+                    .map(key => <Item key={key} index={key} allItems={this.state.items} details={this.state.items[key]} deleteItemFromList={this.deleteItemFromList} updateItemInList={this.updateItemInList} />)
+                }
+              </ul>
+              <div className="actions">
+                <button onClick={() => this.deleteAllFromList()}>Remove All</button>
+              </div>              
+            </section>
+          }
         </div>
       </div>
     );

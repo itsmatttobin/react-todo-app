@@ -7,7 +7,7 @@ class Item extends Component {
 		// Copy and update item
 		const updatedItem = {
 			...item,
-			[e.target.name]: e.target.value
+			[e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value
 		}
 		this.props.updateItemInList(index, updatedItem);
 
@@ -18,8 +18,13 @@ class Item extends Component {
 
 	render() {
 		const { details, index } = this.props;
+		let classes = 'item';
+		if(details.complete)
+			classes += ' complete';
+
 		return (
-			<li className="item" key={index}>
+			<li className={classes} key={index}>
+				<input type="checkbox" name="complete" checked={details.complete} onChange={(e) => this.handleChange(e, index)} />
 				<input type="text" name="title" value={details.title} onChange={(e) => this.handleChange(e, index)} />
 				<span className="delete-item" onClick={() => this.props.deleteItemFromList(index)}>&times;</span>
 			</li>

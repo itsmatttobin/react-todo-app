@@ -5,7 +5,8 @@ class AddItemForm extends Component {
 		e.preventDefault();
 
 		const item = {
-			title: this.title.value
+			title: this.title.value,
+			complete: false
 		}
 
 		this.props.addItemToList(item);

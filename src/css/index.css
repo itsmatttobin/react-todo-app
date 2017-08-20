@@ -55,8 +55,15 @@ header h1 span {
 }
 
 #content {
-	padding: 30px;
+	padding: 30px 30px 60px;
 	text-align: center;
+}
+
+section {
+/*	width: 100%;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;*/
 }
 
 input {
@@ -65,28 +72,35 @@ input {
 	font-size: 2em;
 	outline: none;
 	font-weight: 100;
+	max-width: 500px;
 	width: 100%;
-    max-width: 500px;
     transition: border-color 0.5s ease;
     padding: 0;
+    color: var(--darkgrey);
+    letter-spacing: 1px;
 }
 input:focus {
 	border-color: var(--blue);
 }
 
-.list-items h2 {
+.list-items {
 	margin-top: 60px;
 }
 .item-list {
 	list-style-type: none;
 	padding: 0;
+	margin: 0;
 }
 .item {
 	position: relative;
 	margin-bottom: 30px;
 }
-.item:hover .delete-item {
+.item:hover .delete-item,
+.item:hover input[type="checkbox"] {
 	opacity: 1;
+}
+.item input[type="text"] {	
+	transition: all 0.5s ease;
 }
 .delete-item {
 	position: absolute;
@@ -98,12 +112,47 @@ input:focus {
     margin-left: 15px;
     opacity: 0;
     transition: opacity 0.5s ease;
+    font-weight: 100;
 }
+.item input[type="checkbox"] {
+	position: absolute;
+	display: inline;
+	top: 50%;
+	transform: translateY(-50%);
+    width: auto;
+    margin-left: -1em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
 .item input {
 	border-color: transparent;
 }
 .item input:focus {
 	border-color: var(--blue);
+}
+
+.item.complete input[type="text"] {
+	color: rgba(68, 68, 68, 0.4);
+	text-decoration: line-through;
+}
+
+.actions {
+	text-align: left;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.actions button {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	padding: 0;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 100;
+	color: var(--red);
 }
 
 
