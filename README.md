@@ -2,4 +2,4 @@
 
 A to-do list app built with React
 
-http://todo.matttobin.co.uk/
+https://todo.matttobin.co.uk/
