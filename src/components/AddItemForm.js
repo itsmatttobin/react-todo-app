@@ -15,7 +15,7 @@ class AddItemForm extends Component {
 	render() {
 		return (
 			<form ref={(input) => this.itemForm = input} onSubmit={(e) => this.createItem(e)}>
-				<input ref={(input) => this.title = input} type="text" placeholder="Title..." />
+				<input ref={(input) => this.title = input} type="text" />
 			</form>
 		)
 	}

@@ -35,21 +35,33 @@ class App extends Component {
   }
 
   render() {
+    const numItems = Object.keys(this.state.items).length;
     return (
       <div className="App">
-        <h1>TODO</h1>
+        <header>
+          <h1>TODO... <span>A to-do list app built with React</span></h1>
+        </header>
 
-        <h3>Add an item</h3>
-        <AddItemForm addItemToList={this.addItemToList} />
+        <div id="content">
+          <section className="add-items">
+            <h2>Add an item...</h2>
 
-        <h4>Items</h4>
-        <ul className="item-list">
-          {
-            Object
-              .keys(this.state.items)
-              .map(key => <Item key={key} index={key} allItems={this.state.items} details={this.state.items[key]} deleteItemFromList={this.deleteItemFromList} updateItemInList={this.updateItemInList} />)
-          }
-        </ul>
+            <AddItemForm addItemToList={this.addItemToList} />
+          </section>
+
+          <section className="list-items">
+            {numItems > 0 &&
+              <h2>Items...</h2>
+            }
+            <ul className="item-list">
+              {
+                Object
+                  .keys(this.state.items)
+                  .map(key => <Item key={key} index={key} allItems={this.state.items} details={this.state.items[key]} deleteItemFromList={this.deleteItemFromList} updateItemInList={this.updateItemInList} />)
+              }
+            </ul>
+          </section>
+        </div>
       </div>
     );
   }
