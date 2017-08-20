@@ -15,6 +15,20 @@ class App extends Component {
     }
   }
 
+  componentWillMount() {
+    const localStorageRef = localStorage.getItem('todo-items');
+
+    if(localStorageRef) {
+      this.setState({
+        items: JSON.parse(localStorageRef)
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('todo-items', JSON.stringify(nextState.items));
+  }
+
   addItemToList(item) {
     const items = {...this.state.items};
     const timestamp = Date.now();

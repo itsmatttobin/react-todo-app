@@ -10,6 +10,10 @@ class Item extends Component {
 			[e.target.name]: e.target.value
 		}
 		this.props.updateItemInList(index, updatedItem);
+
+		if(e.target.name === 'title' && e.target.value === '') {
+			this.props.deleteItemFromList(index);
+		}
 	}
 
 	render() {
