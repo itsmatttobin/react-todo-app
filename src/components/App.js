@@ -10,6 +10,7 @@ class App extends Component {
     this.deleteItemFromList = this.deleteItemFromList.bind(this);
     this.updateItemInList = this.updateItemInList.bind(this);
     this.deleteAllFromList = this.deleteAllFromList.bind(this);
+    this.completeAllInList = this.completeAllInList.bind(this);
 
     this.state = {
       items: {}
@@ -55,6 +56,17 @@ class App extends Component {
     });
   }
 
+  completeAllInList() {
+    const items = {...this.state.items};
+    let newItems = {}
+    for(const key in items) {
+      let obj = items[key];
+      obj.complete = true
+      newItems[key] = obj;
+    }
+    this.setState({ items: newItems });
+  }
+
   render() {
     const numItems = Object.keys(this.state.items).length;
     return (
@@ -80,6 +92,7 @@ class App extends Component {
                 }
               </ul>
               <div className="actions">
+                <button className="green" onClick={() => this.completeAllInList()}>Complete All</button>
                 <button onClick={() => this.deleteAllFromList()}>Remove All</button>
               </div>              
             </section>

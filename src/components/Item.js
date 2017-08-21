@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tick from '../images/tick.svg';
 
 class Item extends Component {
 	handleChange(e, index) {
@@ -24,7 +25,10 @@ class Item extends Component {
 
 		return (
 			<li className={classes} key={index}>
-				<input type="checkbox" name="complete" checked={details.complete} onChange={(e) => this.handleChange(e, index)} />
+				<div className="styled-checkbox">
+					<input type="checkbox" name="complete" checked={details.complete} onChange={(e) => this.handleChange(e, index)} />
+					<img src={tick} alt="" />
+				</div>				
 				<input type="text" name="title" value={details.title} onChange={(e) => this.handleChange(e, index)} />
 				<span className="delete-item" onClick={() => this.props.deleteItemFromList(index)}>&times;</span>
 			</li>

@@ -7,6 +7,7 @@
 	--yellow: #FFE900;
 	--offwhite: #F9F9F9;
 	--darkgrey: #444444;
+	--green: #20BF55;
 }
 
 body {
@@ -96,7 +97,7 @@ input:focus {
 	margin-bottom: 30px;
 }
 .item:hover .delete-item,
-.item:hover input[type="checkbox"] {
+.item:hover .styled-checkbox img {
 	opacity: 1;
 }
 .item input[type="text"] {	
@@ -114,15 +115,36 @@ input:focus {
     transition: opacity 0.5s ease;
     font-weight: 100;
 }
-.item input[type="checkbox"] {
+.item .styled-checkbox {
+	display: inline;
 	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -2.5em;
+    cursor: pointer;
+}
+.item input[type="checkbox"] {
+	/*position: absolute;
 	display: inline;
 	top: 50%;
 	transform: translateY(-50%);
     width: auto;
     margin-left: -1em;
     opacity: 0;
+    transition: opacity 0.5s ease;*/
+    opacity: 0;
+    cursor: pointer;
+}
+.item .styled-checkbox img {
+	position: absolute;
+    top: 2px;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
     transition: opacity 0.5s ease;
+
 }
 
 .item input {
@@ -135,6 +157,9 @@ input:focus {
 .item.complete input[type="text"] {
 	color: rgba(68, 68, 68, 0.4);
 	text-decoration: line-through;
+}
+.item.complete .styled-checkbox img {
+	opacity: 1;
 }
 
 .actions {
@@ -153,6 +178,11 @@ input:focus {
 	letter-spacing: 1px;
 	font-weight: 100;
 	color: var(--red);
+	outline: none;
+}
+.actions button.green {
+	color: var(--green);
+	margin-right: 20px;
 }
 
 

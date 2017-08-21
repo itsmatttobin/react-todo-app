@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="62px" viewBox="0 0 70 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.602324745" y="0.673392556" width="3" height="28"></rect>
+        <rect id="path-2" x="0.594408409" y="26.9497475" width="75" height="3"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(34.274603, 22.579690) rotate(-52.000000) translate(-34.274603, -22.579690) translate(-3.725397, 7.579690)">
+            <g id="Rectangle">
+                <use fill="#20BF55" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#20BF55" stroke-width="1" x="1.10232474" y="1.17339256" width="2" height="27"></rect>
+            </g>
+            <g id="Rectangle-2">
+                <use fill="#20BF55" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#20BF55" stroke-width="1" x="1.09440841" y="27.4497475" width="74" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
